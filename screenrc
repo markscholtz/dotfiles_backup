@@ -1,0 +1,8 @@
+#use .bash_profile with screen
+shell -$SHELL
+
+#statusline settings
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
