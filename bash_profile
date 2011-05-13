@@ -14,7 +14,7 @@ alias l="ls -alp"
 alias lp="ls -p"
 alias h=history
 alias c=clear
-alias colours="~/.config/scripts/print_shell_colours.sh"
+alias colours="~/Dropbox/shellscripts/print_shell_colours.sh"
 # Aliases - Rails
 alias ss="script/server"
 alias sc="script/console"
@@ -39,6 +39,9 @@ export PATH
 
 # Make sure exuberant Ctags executable is available 
 PATH="/usr/local/bin:$PATH"
+
+# Make sure the shell scripts in my Dropbox folder are available
+PATH="$HOME/Dropbox/shellscripts:$PATH"
 
 # Other ***********************************************************************
 # Set profile to open up in vi editing mode
