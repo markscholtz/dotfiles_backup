@@ -1,0 +1,7 @@
+# If a directory contains a 'todo.txt' file display its' contents when 
+# cd-ing into that directory.
+# Useful to leave yourself reminders for seldom visited projects.
+if [ -f "todo.txt" ] ; then
+  # display its contents
+  cat todo.txt
+fi
