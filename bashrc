@@ -82,27 +82,6 @@ $(~/.rvm/bin/rvm-prompt)]\$\n'
 
 
 # -----------------------------------------------------------------------------
-# Custom bash methods
-# -----------------------------------------------------------------------------
-function ttt
-{
-  echo 'test test test'
-}
-
-function cd
-{
-  echo 'blah blah blah'
-  # actually change the directory with all args passed to the function
-  builtin cd "$@"
-  # if there's a regular file named "todo.txt"...
-  if [ -f "todo.txt" ] ; then
-    # display its contents
-    cat todo.txt
-  fi
-}
-
-
-# -----------------------------------------------------------------------------
 # Auto-generated settings
 # -----------------------------------------------------------------------------
 # MacPorts
@@ -123,6 +102,7 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # *****************************************************************************
 # Test shell type and perform any customisation based on this below
+# Idea taken from: http://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
 # *****************************************************************************
 if [[ -n $PS1 ]]; then
   : # These are executed only for interactive shells
