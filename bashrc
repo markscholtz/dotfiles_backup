@@ -91,6 +91,9 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
+# Tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
 
 # *****************************************************************************
 # General configuration ends
