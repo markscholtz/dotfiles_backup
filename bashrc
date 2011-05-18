@@ -3,7 +3,26 @@
 # *****************************************************************************
 
 
-
+# -----------------------------------------------------------------------------
+# Script colour variables
+# -----------------------------------------------------------------------------
+black='\e[0;30m'
+black_bright='\e[1;30m'
+red='\e[0;31m'
+red_bright='\e[1;31m'
+green='\e[0;32m'
+green_bright='\e[1;32m'
+yellow='\e[0;33m'
+yellow_bright='\e[1;33m'
+blue='\e[0;34m'
+blue_bright='\e[1;34m'
+magenta='\e[0;35m'
+magenta_bright='\e[1;35m'
+cyan='\e[0;36m'
+cyan_bright='\e[1;36m'
+white='\e[0;37m'
+white_bright='\e[1;37m'
+nocolor='\e[0m'
 
 
 # *****************************************************************************
@@ -27,8 +46,17 @@ export EDITOR=vim
 # Aliases - shell
 # -----------------------------------------------------------------------------
 alias cd..="cd .."
+alias ..="cd .."
+
+
+# Prevent accidental deletion of files
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+#alias l="ls -alp | more"
 alias l="ls -alp"
 alias lp="ls -p"
+alias lm="ls -alp | more"
 alias h=history
 alias c=clear
 # Aliases - shell scripts
@@ -73,12 +101,29 @@ HISTSIZE=1000
 # GIT: Changed PS1 to also show the current branch:
 #PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ ' # original PS1 from Joerg to include the current branch being used by Git
 #PS1='# [\u@\h \w$(__git_ps1 " (%s)")]\$\n'
-PS1='# [\u@\h\
-\e[0;36m\
+
+PS1='\$ \e[0;36m\
 \w\
-\e[m\
+\e[1;35m\
 $(__git_ps1 " (%s)") \
-$(~/.rvm/bin/rvm-prompt)]\$\n'
+\e[0;35m\
+$(~/.rvm/bin/rvm-prompt)\
+\e[0m\
+\n'
+
+# Colour variables in this prompt are causing issues with the git_ps1 and rvm-prompt methods
+#PS1="# [\u@\h\
+#$cyan\
+#\w\
+#$magenta_bright \
+#$(__git_ps1 " (%s)") \
+#$magenta \
+#$(~/.rvm/bin/rvm-prompt)]\$\
+#$nocolor\
+#\n"
+
+# Add colours to ls output
+export CLICOLOR=1
 
 
 # -----------------------------------------------------------------------------
