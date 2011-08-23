@@ -53,40 +53,45 @@ alias ..="cd .."
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-#alias l="ls -alp | more"
+# Listing
 alias l="ls -alp"
 alias lp="ls -p"
 alias lm="ls -alp | more"
 alias h=history
 alias c=clear
-# Aliases - shell scripts
+# Shell scripts
 alias colours="~/Dropbox/shellscripts/print_shell_colours.sh"
-# Aliases - rails
+# Rails
 alias ss="script/server"
 alias sc="script/console"
 alias sdb="script/dbconsole"
 alias rr="rake routes"
-# Aliases - rSpec
+# RSpec
 alias bspec="bundle exec rspec"
-# Aliases - ruby gems
+# Ruby gems
 alias annotate="annotate -p before"
-# Aliases -XCode
+# XCode
 alias xcode="open *.xcodeproj"
+# todo.sh
+alias td="todo.sh"
+# mpd & ncmpc
+alias music="ncmpc -c"
 
 
 # -----------------------------------------------------------------------------
 # Set PATH environment variable
 # -----------------------------------------------------------------------------
 # Make sure mysql executable is available
-PATH=$PATH:$HOME/bin:/usr/local/mysql/bin
-export PATH
+export PATH=$PATH:$HOME/bin:/usr/local/mysql/bin
 # Make sure git executable is available
-PATH=$PATH:$HOME/bin:/usr/local/git/bin
-export PATH
+export PATH=$PATH:$HOME/bin:/usr/local/git/bin
 # Make sure exuberant Ctags executable is available
-PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 # Make sure the shell scripts in my Dropbox folder are available
-PATH="$HOME/Dropbox/shellscripts:$PATH"
+export PATH="$HOME/Dropbox/shellscripts:$PATH"
+# Make sure that the correct readline is used when installing new packages
+export LDFLAGS=-L/usr/local/Cellar/readline/6.2.1/lib
+export CPPFLAGS=-I/usr/local/Cellar/readline/6.2.1/include
 
 
 # -----------------------------------------------------------------------------
@@ -129,8 +134,8 @@ export CLICOLOR=1
 # -----------------------------------------------------------------------------
 # Auto-generated settings
 # -----------------------------------------------------------------------------
-# MacPorts
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# MacPorts (commented out as I have switched over to Homebrew)
+#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
